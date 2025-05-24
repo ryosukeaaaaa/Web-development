@@ -1,14 +1,29 @@
+<!-- このHTML文書がHTML5で書かれていることをブラウザに知らせる宣言 -->
 <!DOCTYPE html>
+<!-- 言語指定 -->
 <html lang="ja">
+<!-- メタデータ（表示されない設定）の設定 -->
 <head>
   <meta charset="UTF-8" />
-  <title>背景色チェンジャー</title>
-  <link rel="stylesheet" href="style.css">
+  <title>ToDoアプリ</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<!-- ページの内容を記述する部分 -->
 <body>
-  <h1>背景色チェンジャー</h1>
-  <button onclick="changeBackgroundColor()">背景色を変えるよ</button>
-
+    <!-- ホーム画面のブロック -->
+  <div id="home">
+    <h1>ようこそ！</h1>
+    <button onclick="goToTodo()">ToDoリストを見る</button>
+  </div>
+<!-- ToDoリスト画面 -->
+  <div id="todo" style="display: none;">
+    <h1>ToDoリスト</h1>
+    <input type="text" id="todoInput" placeholder="やることを入力" />
+    <button onclick="addTodo()">追加</button>
+    <ul id="todoList"></ul>
+    <button onclick="goHome()">ホームへ戻る</button>
+  </div>
+<!-- 外部のJSファイルを読み込む -->
   <script src="main.js"></script>
 </body>
 </html>

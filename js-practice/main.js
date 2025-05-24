@@ -1,13 +1,27 @@
-function changeBackgroundColor() {
-  // ランダムなRGBカラーを作成
-  const r = Math.floor(Math.random() * 256); // 0-255
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-
-  const color = `rgb(${r}, ${g}, ${b})`;
-
-  // 背景色を変更
-  document.body.style.backgroundColor = color;
+// 画面遷移
+// 画面遷移をオンオフで管理。シングルページアプリケーション（SPA）と呼ばれる。
+function goToTodo() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("todo").style.display = "block";
 }
 
+function goHome() {
+  document.getElementById("todo").style.display = "none";
+  document.getElementById("home").style.display = "block";
+}
 
+// ToDo追加
+function addTodo() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+  if (text === "") return;
+
+  const li = document.createElement("li");
+  li.textContent = text;
+
+  // 削除機能（クリックで削除）
+  li.onclick = () => li.remove();
+
+  document.getElementById("todoList").appendChild(li);
+  input.value = "";
+}
