@@ -9,3 +9,5 @@ function changeBackgroundColor() {
   // 背景色を変更
   document.body.style.backgroundColor = color;
 }
+
+
